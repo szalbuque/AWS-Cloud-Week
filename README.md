@@ -43,3 +43,5 @@ Três dias práticos para construir uma aplicação de chat serverless na nuvem 
 
 * Para corrigir, preciso entrar como root e adicionar permissões. Mesmo que o usuário silvia_cloud_week esteja logado, as permissões serão aplicadas imediatamente, bastando dar um refresh na página do console.
 
+![](imagens/afterPermissionEC2full.png)
+
