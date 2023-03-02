@@ -45,3 +45,19 @@ Três dias práticos para construir uma aplicação de chat serverless na nuvem 
 
 ![](imagens/afterPermissionEC2full.png)
 
+* O ideal é criar grupos e adicionar as permissões aos grupos. Daí, todos os usuários de um dado grupo terão as mesmas permissões de acesso. A aplicação das permissões também é imediata nesse caso.
+
+<h4><b>Backend Serverless AWS</b></h4>
+
+* Neste exercício são usados:
+  * AWS Lambda:
+    * Executa código em resposta a eventos;
+    * Exemplos: chamada de API, upload de arquivo, atualização de BD;
+    * Componentes principais: <b>eventos</b> (gatilho para execução), <b>funções</b> (código a executar), <b>recursos</b> (componentes usados pela função);
+  * Amazon API Gateway
+
+## A aplicação:
+* Repositório: https://github.com/cassiano-dio/chatgpt-nodejs-api
+* Neste exercício, o código será enviado para o AWS Lambda por um arquivo zip. Mas é possível integrar com um pipeline CI/CD, como o do GitHub, por exemplo. Também há serviços de CI/CD na AWS.
+* 
+
