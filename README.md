@@ -98,7 +98,7 @@ Três dias práticos para construir uma aplicação de chat serverless na nuvem 
 
 ![](imagens/copiaurlwebsocket.png)
 
-* Copiar a URL do websocket e colar no código da função Lambda, no arquivo .env:
+* Copiar a URL do websocket e colar no código da função Lambda, no arquivo index.js:
 
 ![](imagens/aplicaAPIwebsocketNoCodigo.png)
 
@@ -106,3 +106,26 @@ Três dias práticos para construir uma aplicação de chat serverless na nuvem 
 
 ## Configurar permissões no IAM:
 
+* Ainda no console da função Lambda, clicar em Configuration > Permissions;
+* Aparece o Role name que executa a função Lambda, clicar nele;
+* Clicar em Add permissions > attach policies:
+
+![](imagens/adicionaPermissaoLambda.png)
+
+* Adicionar a política: AmazonAPIGatewayInvokeFullAccess
+
+## Configurar o time out:
+* Ainda no console da função Lambda, clicar em Configuration > General configuration;
+* Alterar o time out para um minuto.
+
+## Testar a aplicação sem o FrontEnd:
+* Instalar a ferramenta wscat com 
+  > npm i -g wscat
+* Testar a conexão com a API com a URL do websocket:
+  > wscat -c wss://btyyxpos36.execute-api.us-west-2.amazonaws.com/production
+![](imagens/testaconexão.png)
+* Testar uma ação:
+  > {"action":"setName","name":"Silvia"}
+
+Resultado:<br>
+![](imagens/testeOK.png)
