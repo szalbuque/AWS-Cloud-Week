@@ -1,5 +1,6 @@
-# AWS-Cloud-Week Repositório para o projeto
-Três dias práticos para construir uma aplicação de chat serverless na nuvem AWS.
+# Deploy de aplicação backend em AWS Lambda
+<h2>Laboratório executado durante a AWS-Cloud-Week, na Dio.me</h2>
+
 ## Setup
 ### Sistema operacional: Windows 11 Pro
 * Hardware: 
