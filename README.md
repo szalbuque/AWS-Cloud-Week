@@ -59,5 +59,50 @@ Três dias práticos para construir uma aplicação de chat serverless na nuvem 
 ## A aplicação:
 * Repositório: https://github.com/cassiano-dio/chatgpt-nodejs-api
 * Neste exercício, o código será enviado para o AWS Lambda por um arquivo zip. Mas é possível integrar com um pipeline CI/CD, como o do GitHub, por exemplo. Também há serviços de CI/CD na AWS.
-* 
+* A pasta da aplicação foi copiada para este repositório.
+
+## Criando a função Lambda
+* No console AWS buscar por Lambda e clicar em Create function;
+* Clicar em "Author from scratch";
+* Preencher: 
+  * function name;
+  * runtime: node.js 16;
+  * architecture: x86_64;
+  * execution role: create a new role with basic Lambda permissions;
+  * clicar em Create function.
+
+![](imagens/lambdafunctioncreated.png)
+
+## API Gateway - criação do websocket
+* No console AWS buscar API Gateway e selecionar Websocket, clicando em Build;
+* Iniciar a configuração:
+  
+![](imagens/apigtwy1.png)
+
+* Adicionar rotas padrão e customizadas:
+
+![](imagens/apigtwy-rotas-padrão.png)
+
+  * As rotas precisam coincidir com o que está no código do index.js:
+  
+![](imagens/rotas.png)
+
+![](imagens/customroutes.png)
+
+* Todos os métodos estão na mesma função Lambda, então todas as rotas serão integradas com ela:
+
+![](imagens/integrations.png)
+
+* Dar um nome e clicar em Create and Deploy.
+* Clicando em Stages > Production (que foi o nome que demos a ela), vê-se a URL do websocket:
+
+![](imagens/copiaurlwebsocket.png)
+
+* Copiar a URL do websocket e colar no código da função Lambda, no arquivo .env:
+
+![](imagens/aplicaAPIwebsocketNoCodigo.png)
+
+* Clicar em Deploy.
+
+## Configurar permissões no IAM:
 
